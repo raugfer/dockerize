@@ -6,15 +6,15 @@ This is a Dockerfile to dockerize a google-chrome session
 
 Build the image locally
 
-  $ docker build -t google-chrome .
+    $ docker build -t google-chrome .
 
 Create the settings folders
 
-  $ mkdir -p $HOME/.config/google-chrome-docker/
+    $ mkdir -p $HOME/.config/google-chrome-docker/
 
 Start the container
 
-  $ docker run \
+    $ docker run \
 	-d \
 	--rm \
 	--name google-chrome \
