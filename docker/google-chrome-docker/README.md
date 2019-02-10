@@ -15,12 +15,12 @@ Create the settings folders
 Start the container
 
     $ docker run \
-	-d \
-	--rm \
-	--name google-chrome \
-	--cap-add SYS_ADMIN \
-	-e DISPLAY \
-	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-	-v $HOME/.config/google-chrome/:/home/ubuntu/.config/google-chrome/ \
-	--device /dev/snd \
-	google-chrome
+        -d \
+        --rm \
+        --name google-chrome \
+        --cap-add SYS_ADMIN \
+        -e DISPLAY \
+        -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+        -v $HOME/.config/google-chrome/:/home/ubuntu/.config/google-chrome/ \
+        --device /dev/snd \
+        google-chrome
