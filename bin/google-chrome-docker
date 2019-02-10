@@ -11,5 +11,8 @@ docker run \
 	-e DISPLAY \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 	-v $HOME/.config/google-chrome-docker/:/home/ubuntu/.config/google-chrome/ \
+	-v /dev/shm:/dev/shm \
+	-v /run/dbus/:/run/dbus/:rw \
+	--device /dev/dri \
 	--device /dev/snd \
 	raugfer/google-chrome:stable-current

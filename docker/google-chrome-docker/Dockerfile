@@ -9,8 +9,8 @@ ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y wget gdebi-core
-RUN wget ${URL} -O /tmp/google-chrome-stable_current_amd64.deb
+RUN apt-get install -y wget gdebi-core libcanberra-gtk3-module
+RUN wget -q -O /tmp/google-chrome-stable_current_amd64.deb ${URL}
 RUN gdebi --n /tmp/google-chrome-stable_current_amd64.deb
 
 ENV DISPLAY=:0
