@@ -15,7 +15,7 @@ RUN gdebi --n /tmp/google-chrome-stable_current_amd64.deb
 
 ENV DISPLAY=:0
 
-RUN useradd -U -m -s /bin/bash ${USER}
+RUN useradd -U -G audio -m -s /bin/bash ${USER}
 USER ${USER}
 WORKDIR /home/${USER}/
 CMD google-chrome
