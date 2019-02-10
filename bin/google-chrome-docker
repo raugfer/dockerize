@@ -1,0 +1,15 @@
+#!/bin/sh
+docker build \
+	-t raugfer/google-chrome:stable-current \
+	`dirname $0`/../docker/google-chrome-docker/
+mkdir -p $HOME/.config/google-chrome-docker/
+docker run \
+	-d \
+	--rm \
+	--name google-chrome \
+	--cap-add SYS_ADMIN \
+	-e DISPLAY \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/google-chrome-docker/:/home/ubuntu/.config/google-chrome/ \
+	--device /dev/snd \
+	raugfer/google-chrome:stable-current
