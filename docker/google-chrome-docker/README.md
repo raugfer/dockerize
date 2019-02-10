@@ -21,6 +21,6 @@ Start the container
         --cap-add SYS_ADMIN \
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-        -v $HOME/.config/google-chrome/:/home/ubuntu/.config/google-chrome/ \
+        -v $HOME/.config/google-chrome-docker/:/home/ubuntu/.config/google-chrome/ \
         --device /dev/snd \
         google-chrome
