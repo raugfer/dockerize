@@ -1,8 +1,6 @@
 #!/bin/sh
-FLUTTER=true
 docker build \
 	-t raugfer/android-studio:3.2.1.0 \
-	--build-arg FLUTTER=${FLUTTER} \
 	`dirname $0`/../docker/android-studio-docker/
 mkdir -p $HOME/.config/android-studio-docker/ $HOME/Projects/
 docker run \
@@ -13,4 +11,8 @@ docker run \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 	-v $HOME/.config/android-studio-docker/:/home/ubuntu/ \
 	-v $HOME/Projects/:/home/ubuntu/Projects/ \
+	--device /dev/dri \
+	--device /dev/kvm \
+	--device /dev/snd \
 	raugfer/android-studio:3.2.1.0
+docker exec -it -u root android-studio chmod 777 /dev/kvm

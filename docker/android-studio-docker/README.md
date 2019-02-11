@@ -8,10 +8,6 @@ Build the image locally
 
     $ docker build -t android-studio .
 
-To include the flutter instalation
-
-    $ docker build -t android-studio --build-arg FLUTTER=true .
-
 Create the settings and projects folders
 
     $ mkdir -p $HOME/.config/android-studio-docker/ $HOME/Projects/
@@ -26,4 +22,7 @@ Start the container
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
         -v $HOME/.config/android-studio-docker/:/home/ubuntu/ \
         -v $HOME/Projects/:/home/ubuntu/Projects/ \
+        --device /dev/dri \
+        --device /dev/kvm \
+        --device /dev/snd \
         android-studio
