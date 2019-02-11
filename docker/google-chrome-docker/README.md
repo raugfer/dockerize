@@ -8,7 +8,7 @@ Build the image locally
 
     $ docker build -t google-chrome .
 
-Create the settings folders
+Create the settings folder
 
     $ mkdir -p $HOME/.config/google-chrome-docker/
 
