@@ -1,6 +1,8 @@
 #!/bin/sh
+FLUTTER=true
 docker build \
 	-t raugfer/android-studio:3.2.1.0 \
+	--build-arg FLUTTER=${FLUTTER} \
 	`dirname $0`/../docker/android-studio-docker/
 mkdir -p $HOME/.config/android-studio-docker/ $HOME/Projects/
 docker run \

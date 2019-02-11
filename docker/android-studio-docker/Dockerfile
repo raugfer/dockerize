@@ -12,11 +12,19 @@ RUN apt-get upgrade -y
 RUN apt-get install -y wget unzip
 RUN wget -q -O /tmp/android-studio-ide-181.5056338-linux.zip ${URL}
 RUN cd /opt/ && unzip -q /tmp/android-studio-ide-181.5056338-linux.zip
-RUN apt-get install -y libxext6 libxrender1 libxtst6 libxi6 libfreetype6
+RUN apt-get install -y libxext6 libxrender1 libxtst6 libxi6 libfreetype6 libsecret-1-0
+
+ARG FLUTTER=false
+ARG FLUTTER_URL=https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.0.0-stable.tar.xz
+
+RUN ${FLUTTER} && apt-get install -y curl git xz-utils libglu1-mesa lib32stdc++6
+RUN ${FLUTTER} && wget -q -O /tmp/flutter_linux_v1.0.0-stable.tar.xz ${FLUTTER_URL}
+RUN ${FLUTTER} && cd /opt/ && tar xf /tmp/flutter_linux_v1.0.0-stable.tar.xz
 
 ENV DISPLAY=:0
 
 RUN useradd -U -m -s /bin/bash ${USER}
+RUN ${FLUTTER} && chown -R ${USER}:${USER} /opt/flutter/
 USER ${USER}
 WORKDIR /home/${USER}/
 CMD /opt/android-studio/bin/studio.sh
