@@ -25,4 +25,5 @@ Start the container
         --device /dev/dri \
         --device /dev/kvm \
         --device /dev/snd \
+        --device /dev/bus/usb \
         android-studio
