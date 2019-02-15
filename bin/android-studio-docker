@@ -14,5 +14,6 @@ docker run \
 	--device /dev/dri \
 	--device /dev/kvm \
 	--device /dev/snd \
+	--device /dev/bus/usb \
 	raugfer/android-studio:3.2.1.0
 docker exec -it -u root android-studio chmod 777 /dev/kvm
