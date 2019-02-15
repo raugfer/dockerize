@@ -27,3 +27,10 @@ Start the container
         --device /dev/snd \
         --device /dev/bus/usb \
         android-studio
+
+Finally grant read/write access to kvm and usb devices to run on the emulator or phone (plug the phone before starting the container)
+
+    $ docker exec \
+        -u root \
+        android-studio \
+        chmod 666 /dev/kvm /dev/bus/usb/*/*

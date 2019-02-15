@@ -19,7 +19,7 @@ RUN apt-get install -y curl git xz-utils libglu1-mesa lib32stdc++6
 
 ENV DISPLAY=:0
 
-RUN useradd -U -G audio -G plugdev -m -s /bin/bash ${USER}
+RUN useradd -U -G audio -G plugdev -G kvm -m -s /bin/bash ${USER}
 USER ${USER}
 WORKDIR /home/${USER}/
 CMD /opt/android-studio/bin/studio.sh
