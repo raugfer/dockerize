@@ -1,6 +1,7 @@
 #!/bin/sh
 docker build \
 	-t raugfer/node:8.15.0 \
+	--build-arg USER=$USER \
 	`dirname $0`/../docker/node-docker/
 mkdir -p $HOME/Projects/
 docker run \
@@ -8,6 +9,6 @@ docker run \
 	--hostname node \
 	--rm \
 	--name node \
-	-v $HOME/Projects/:/home/ubuntu/Projects/ \
+	-v $HOME/Projects/:$HOME/Projects/ \
 	raugfer/node:8.15.0 \
 	bash

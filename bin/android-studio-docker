@@ -1,6 +1,7 @@
 #!/bin/sh
 docker build \
 	-t raugfer/android-studio:3.2.1.0 \
+	--build-arg USER=$USER \
 	`dirname $0`/../docker/android-studio-docker/
 mkdir -p $HOME/.config/android-studio-docker/ $HOME/Projects/
 docker run \
@@ -9,8 +10,8 @@ docker run \
 	--name android-studio \
 	-e DISPLAY \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-	-v $HOME/.config/android-studio-docker/:/home/ubuntu/ \
-	-v $HOME/Projects/:/home/ubuntu/Projects/ \
+	-v $HOME/.config/android-studio-docker/:$HOME/ \
+	-v $HOME/Projects/:$HOME/Projects/ \
 	--device /dev/dri \
 	--device /dev/kvm \
 	--device /dev/snd \

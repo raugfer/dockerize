@@ -1,6 +1,7 @@
 #!/bin/sh
 docker build \
 	-t raugfer/rust:1.32 \
+	--build-arg USER=$USER \
 	`dirname $0`/../docker/rust-docker/
 mkdir -p $HOME/Projects/
 docker run \
@@ -8,5 +9,5 @@ docker run \
 	--hostname rust \
 	--rm \
 	--name rust \
-	-v $HOME/Projects/:/home/ubuntu/Projects/ \
+	-v $HOME/Projects/:$HOME/Projects/ \
 	raugfer/rust:1.32
