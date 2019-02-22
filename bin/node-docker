@@ -1,0 +1,13 @@
+#!/bin/sh
+docker build \
+	-t raugfer/node:8.15.0 \
+	`dirname $0`/../docker/node-docker/
+mkdir -p $HOME/Projects/
+docker run \
+	-it \
+	--hostname node \
+	--rm \
+	--name node \
+	-v $HOME/Projects/:/home/ubuntu/Projects/ \
+	raugfer/node:8.15.0 \
+	bash
