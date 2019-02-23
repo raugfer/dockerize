@@ -20,5 +20,6 @@ Start the container
         --rm \
         --name rust \
         -v $HOME/Projects/:/home/ubuntu/Projects/ \
-        rust
-
+        -e TERM=$TERM \
+        rust \
+        bash

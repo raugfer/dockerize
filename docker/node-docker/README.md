@@ -20,5 +20,6 @@ Start the container
         --rm \
         --name node \
         -v $HOME/Projects/:/home/ubuntu/Projects/ \
+        -e TERM=$TERM \
         node \
         bash
