@@ -8,8 +8,10 @@ ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
+RUN apt-get install -y sudo
 
 RUN groupmod -n ${USER} node
-RUN usermod -l ${USER} -d /home/${USER} -m node
+RUN usermod -l ${USER} -a -G sudo -d /home/${USER} -m node
+RUN echo "${USER} ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER}
 USER ${USER}
 WORKDIR /home/${USER}/
