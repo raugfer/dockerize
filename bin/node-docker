@@ -12,5 +12,6 @@ docker run \
 	--name node \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	-w $PWD \
+	-e TERM=$TERM \
 	raugfer/node:8.15.0 \
 	bash

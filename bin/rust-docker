@@ -12,5 +12,6 @@ docker run \
 	--name rust \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	-w $PWD \
+	-e TERM=$TERM \
 	raugfer/rust:1.32 \
 	bash
