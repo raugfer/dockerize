@@ -10,6 +10,6 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 RUN groupmod -n ${USER} node
-RUN usermod -l ${USER} -d /home/${USER}/ -m node
+RUN usermod -l ${USER} -d /home/${USER} -m node
 USER ${USER}
 WORKDIR /home/${USER}/
