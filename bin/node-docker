@@ -10,5 +10,6 @@ docker run \
 	--rm \
 	--name node \
 	-v $HOME/Projects/:$HOME/Projects/ \
+	-w $PWD \
 	raugfer/node:8.15.0 \
 	bash

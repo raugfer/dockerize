@@ -10,4 +10,6 @@ docker run \
 	--rm \
 	--name rust \
 	-v $HOME/Projects/:$HOME/Projects/ \
-	raugfer/rust:1.32
+	-w $PWD \
+	raugfer/rust:1.32 \
+	bash
