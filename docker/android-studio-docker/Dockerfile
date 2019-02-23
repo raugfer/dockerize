@@ -21,5 +21,6 @@ ENV DISPLAY=:0
 
 RUN useradd -U -G audio -G plugdev -G kvm -m -s /bin/bash ${USER}
 USER ${USER}
+ENV USER=${USER}
 WORKDIR /home/${USER}/
 CMD /opt/android-studio/bin/studio.sh
