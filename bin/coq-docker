@@ -1,0 +1,17 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t raugfer/coq:8.6.0 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/coq-docker/
+mkdir -p $HOME/Projects/
+docker run \
+	-it \
+	--hostname coq \
+	--rm \
+	--name coq \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-w $PWD \
+	-e TERM=$TERM \
+	raugfer/coq:8.6.0 \
+	bash
