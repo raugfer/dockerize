@@ -8,9 +8,9 @@ Build the image locally
 
     $ docker build -t visual-studio-code .
 
-Create the settings folder
+Create the settings and projects folders
 
-    $ mkdir -p $HOME/.config/visual-studio-code-docker/
+    $ mkdir -p $HOME/.config/visual-studio-code-docker/ $HOME/Projects/
 
 Start the container
 
