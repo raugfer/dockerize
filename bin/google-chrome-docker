@@ -1,5 +1,6 @@
 #!/bin/sh
 docker build \
+	-q \
 	-t raugfer/google-chrome:stable-current \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/google-chrome-docker/

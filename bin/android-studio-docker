@@ -1,5 +1,6 @@
 #!/bin/sh
 docker build \
+	-q \
 	-t raugfer/android-studio:3.2.1.0 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/android-studio-docker/
