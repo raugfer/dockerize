@@ -3,7 +3,7 @@ docker build \
 	-t raugfer/visual-studio-code:1.32.2 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/visual-studio-code-docker/
-mkdir -p $HOME/.config/visual-studio-code-android/ $HOME/Projects/
+mkdir -p $HOME/.config/visual-studio-code-docker/ $HOME/Projects/
 docker run \
 	-d \
 	--rm \
