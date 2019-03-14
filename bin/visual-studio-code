@@ -1,0 +1,15 @@
+#!/bin/sh
+docker build \
+	-t raugfer/visual-studio-code:1.32.2 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/visual-studio-code/
+mkdir -p $HOME/.config/visual-studio-code/
+docker run \
+	-d \
+	--rm \
+	--name visual-studio-code \
+	-e DISPLAY \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/visual-studio-code/:$HOME/.config/Code/ \
+	raugfer/visual-studio-code:1.32.2
+
