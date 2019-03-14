@@ -11,5 +11,6 @@ docker run \
 	-e DISPLAY \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 	-v $HOME/.config/visual-studio-code/:$HOME/.config/Code/ \
+        -v $HOME/Projects/:$HOME/Projects/ \
 	raugfer/visual-studio-code:1.32.2
 

@@ -21,4 +21,5 @@ Start the container
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
         -v $HOME/.config/visual-studio-code/:/home/ubuntu/.config/Code/ \
+        -v $HOME/Projects/:/home/ubuntu/Projects/ \
         visual-studio-code
