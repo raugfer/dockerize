@@ -10,7 +10,7 @@ Build the image locally
 
 Create the settings folder
 
-    $ mkdir -p $HOME/.config/google-chrome-docker/
+    $ mkdir -p $HOME/.config/google-chrome-docker/ $HOME/Downloads/
 
 Start the container
 
@@ -22,5 +22,6 @@ Start the container
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
         -v $HOME/.config/google-chrome-docker/:/home/ubuntu/.config/google-chrome/ \
+        -v $HOME/Downloads/:/home/ubuntu/Downloads/ \
         --device /dev/snd \
         google-chrome
