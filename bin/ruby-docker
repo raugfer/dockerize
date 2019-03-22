@@ -1,0 +1,17 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t raugfer/ruby:2.6.2 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/ruby-docker/
+mkdir -p $HOME/Projects/
+docker run \
+	-it \
+	--hostname ruby \
+	--rm \
+	--name ruby \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-w $PWD \
+	-e TERM=$TERM \
+	raugfer/ruby:2.6.2 \
+	bash
