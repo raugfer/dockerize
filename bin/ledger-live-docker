@@ -1,0 +1,20 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t raugfer/ledger-live:1.6.0 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/ledger-live-docker/
+mkdir -p $HOME/.config/ledger-live-docker/
+docker run \
+	-d \
+	--rm \
+	--name ledger-live \
+	--cap-add SYS_ADMIN \
+	--security-opt apparmor:unconfined \
+	-e DISPLAY \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/ledger-live-docker/:$HOME/.config/Ledger\ Live/ \
+	--device /dev/fuse \
+	$(for dev in /dev/hidraw*; do echo -n "--device $dev "; done) \
+	raugfer/ledger-live:1.6.0
+
