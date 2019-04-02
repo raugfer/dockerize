@@ -18,5 +18,5 @@ docker run \
 	--device /dev/snd \
 	--device /dev/bus/usb \
 	raugfer/android-studio:3.2.1.0
-# TODO improve the approach for granting read/writte access to devices
+# TODO improve the approach for granting read/write access to devices
 docker exec -u root android-studio chmod 666 /dev/kvm /dev/bus/usb/*/*
