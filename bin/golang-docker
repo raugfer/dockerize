@@ -1,7 +1,7 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t raugfer/golang:1.10.8 \
+	-t $USER/golang:1.10.8 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/golang-docker/
 mkdir -p $HOME/Projects/
@@ -13,5 +13,5 @@ docker run \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	-w $PWD \
 	-e TERM=$TERM \
-	raugfer/golang:1.10.8 \
+	$USER/golang:1.10.8 \
 	bash

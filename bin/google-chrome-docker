@@ -1,7 +1,7 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t raugfer/google-chrome:stable-current \
+	-t $USER/google-chrome:stable-current \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/google-chrome-docker/
 mkdir -p $HOME/.config/google-chrome-docker/ $HOME/Downloads/
@@ -19,4 +19,4 @@ docker run \
 	--device /dev/dri \
 	--device /dev/snd \
 	--memory=4g \
-	raugfer/google-chrome:stable-current
+	$USER/google-chrome:stable-current
