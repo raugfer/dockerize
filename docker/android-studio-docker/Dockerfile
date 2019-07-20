@@ -15,7 +15,7 @@ RUN cd /opt/ && tar xzf /tmp/android-studio-ide-183.5692245-linux.tar.gz
 RUN apt-get install -y libxext6 libxrender1 libxtst6 libxi6 libfreetype6 libsecret-1-0 qemu-kvm usbutils
 
 # flutter dependencies
-RUN apt-get install -y curl git xz-utils libglu1-mesa lib32stdc++6
+RUN apt-get install -y curl git unzip xz-utils libglu1-mesa lib32stdc++6
 
 ENV DISPLAY=:0
 
