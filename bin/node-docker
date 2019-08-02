@@ -10,6 +10,7 @@ docker run \
 	--hostname node \
 	--rm \
 	--name node \
+	--network=host \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	-w $PWD \
 	-e TERM=$TERM \
