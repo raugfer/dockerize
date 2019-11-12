@@ -1,9 +1,9 @@
 #!/bin/sh
 docker build \
+	-q \
 	-t $USER/google-chrome:stable-current \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/google-chrome-docker/
-#	-q \
 mkdir -p $HOME/.config/google-chrome-docker/ $HOME/Downloads/
 docker run \
 	-d \
