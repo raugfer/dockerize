@@ -9,4 +9,5 @@ This was developed for my personal use and shared to help others achieve the sam
 * [Android Studio](docker/android-studio-docker/README.md)
 * [Google Chrome](docker/google-chrome-docker/README.md)
 * [Ledger Live](docker/ledger-live-docker/README.md)
+* [Keybase](docker/keybase-docker/README.md)
 * [Visual Studio Code](docker/visual-studio-code-docker/README.md)
