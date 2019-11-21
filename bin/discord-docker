@@ -1,0 +1,15 @@
+#!/bin/sh
+docker build \
+	-t $USER/discord:0.0.9 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/discord-docker/
+#	-q \
+mkdir -p $HOME/.config/discord-docker/
+docker run \
+	-it \
+	--rm \
+	--name discord \
+	-e DISPLAY \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/discord-docker/:$HOME/.config/discord/ \
+	$USER/discord:0.0.9
