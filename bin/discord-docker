@@ -1,12 +1,12 @@
 #!/bin/sh
 docker build \
+	-q \
 	-t $USER/discord:0.0.9 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/discord-docker/
-#	-q \
 mkdir -p $HOME/.config/discord-docker/
 docker run \
-	-it \
+	-d \
 	--rm \
 	--name discord \
 	-e DISPLAY \

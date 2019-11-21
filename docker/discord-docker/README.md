@@ -21,4 +21,4 @@ Start the container
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
         -v $HOME/.config/discord-docker/:/home/ubuntu/.config/discord/ \
-        google-chrome
+        discord
