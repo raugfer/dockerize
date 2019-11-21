@@ -12,4 +12,5 @@ docker run \
 	-e DISPLAY \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 	-v $HOME/.config/discord-docker/:$HOME/.config/discord/ \
+	--device /dev/snd \
 	$USER/discord:0.0.9
