@@ -16,6 +16,7 @@ docker run \
 	-v $HOME/Downloads/:$HOME/Downloads/ \
 	-v /dev/shm:/dev/shm \
 	-v /run/dbus/:/run/dbus/:rw \
+	-v /etc/localtime:/etc/localtime:ro \
 	--device /dev/dri \
 	--device /dev/snd \
 	--memory=4g \
