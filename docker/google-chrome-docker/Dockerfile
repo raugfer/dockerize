@@ -12,7 +12,7 @@ RUN apt-get upgrade -y
 RUN apt-get install -y wget gdebi-core
 RUN wget -q -O /tmp/google-chrome-stable_current_amd64.deb ${URL}
 RUN gdebi --n /tmp/google-chrome-stable_current_amd64.deb
-RUN apt-get install -y libcanberra-gtk3-module fonts-ubuntu
+RUN apt-get install -y libcanberra-gtk3-module fonts-ubuntu light-themes
 
 ENV DISPLAY=:0
 
