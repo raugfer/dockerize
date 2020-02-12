@@ -1,4 +1,4 @@
-FROM golang:1.10.8
+FROM golang:1.13.7
 
 MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
