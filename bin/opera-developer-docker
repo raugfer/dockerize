@@ -1,0 +1,23 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/opera-developer:69.0.3623.0 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/opera-developer-docker/
+mkdir -p $HOME/.config/opera-developer-docker/ $HOME/Downloads/
+docker run \
+	-d \
+	--rm \
+	--name opera-developer \
+	--cap-add SYS_ADMIN \
+	-e DISPLAY \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/Downloads/:$HOME/Downloads/ \
+	-v $HOME/.config/opera-developer-docker/:$HOME/.config/opera-developer/ \
+	-v /dev/shm:/dev/shm \
+	-v /run/dbus/:/run/dbus/:rw \
+	-v /etc/localtime:/etc/localtime:ro \
+	--device /dev/dri \
+	--device /dev/snd \
+	--memory=4g \
+	$USER/opera-developer:69.0.3623.0
