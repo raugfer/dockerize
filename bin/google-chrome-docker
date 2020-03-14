@@ -11,6 +11,7 @@ docker run \
 	--name google-chrome \
 	--cap-add SYS_ADMIN \
 	-e DISPLAY \
+	-e TZ \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 	-v $HOME/.config/google-chrome-docker/:$HOME/.config/google-chrome/ \
 	-v $HOME/Downloads/:$HOME/Downloads/ \

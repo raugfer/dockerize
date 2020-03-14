@@ -15,6 +15,7 @@ RUN gdebi --n /tmp/google-chrome-stable_current_amd64.deb
 RUN apt-get install -y libcanberra-gtk3-module fonts-ubuntu light-themes
 
 ENV DISPLAY=:0
+ENV TZ=
 
 RUN useradd -U -G audio -m -s /bin/bash ${USER}
 USER ${USER}
