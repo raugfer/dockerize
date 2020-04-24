@@ -20,5 +20,5 @@ docker run \
 	-v /etc/localtime:/etc/localtime:ro \
 	--device /dev/dri \
 	--device /dev/snd \
-	--memory=4g \
+	--memory=5g \
 	$USER/google-chrome:stable-current
