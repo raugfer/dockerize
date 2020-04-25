@@ -1,0 +1,24 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/brave-browser:stable-current \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/brave-browser-docker/
+mkdir -p $HOME/.config/brave-browser-docker/ $HOME/Downloads/
+docker run \
+	-d \
+	--rm \
+	--name brave-browser \
+	--cap-add SYS_ADMIN \
+	-e DISPLAY \
+	-e TZ \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/brave-browser-docker/:$HOME/.config/BraveSoftware/Brave-Browser/ \
+	-v $HOME/Downloads/:$HOME/Downloads/ \
+	-v /dev/shm:/dev/shm \
+	-v /run/dbus/:/run/dbus/:rw \
+	-v /etc/localtime:/etc/localtime:ro \
+	--device /dev/dri \
+	--device /dev/snd \
+	--memory=5g \
+	$USER/brave-browser:stable-current
