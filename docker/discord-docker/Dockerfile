@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
@@ -11,7 +11,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y wget gdebi-core
 RUN wget -q -O /tmp/discord-0.0.10.deb ${URL}
-RUN gdebi --n /tmp/discord-0.0.10.deb
+RUN DEBIAN_FRONTEND=noninteractive gdebi --n /tmp/discord-0.0.10.deb
 RUN apt-get install -y libcanberra-gtk3-module libx11-xcb1
 
 ENV DISPLAY=:0
