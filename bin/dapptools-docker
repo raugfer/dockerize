@@ -1,0 +1,17 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/dapptools:0.27.0 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/dapptools-docker/
+mkdir -p $HOME/Projects/
+docker run \
+	-it \
+	--hostname dapptools \
+	--rm \
+	--name dapptools \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-w $PWD \
+	-e TERM=$TERM \
+	$USER/dapptools:0.27.0 \
+	bash
