@@ -8,7 +8,7 @@ ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y sudo curl git xz-utils
+RUN apt-get install -y sudo curl git make xz-utils
 
 COPY entrypoint.sh /entrypoint.sh
 
@@ -18,5 +18,6 @@ USER ${USER}
 ENV USER=${USER}
 RUN touch ~/.sudo_as_admin_successful
 RUN curl https://dapp.tools/install | sh
+RUN echo 'sandbox = false' >> ~/.config/nix/nix.conf
 WORKDIR /home/${USER}/
 ENTRYPOINT ["/entrypoint.sh"]
