@@ -22,4 +22,5 @@ Start the container
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
         -v $HOME/.config/discord-docker/:/home/ubuntu/.config/discord/ \
         --device /dev/snd \
+        --device /dev/video0 \
         discord
