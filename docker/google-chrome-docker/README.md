@@ -24,4 +24,5 @@ Start the container
         -v $HOME/.config/google-chrome-docker/:/home/ubuntu/.config/google-chrome/ \
         -v $HOME/Downloads/:/home/ubuntu/Downloads/ \
         --device /dev/snd \
+        --device /dev/video0 \
         google-chrome

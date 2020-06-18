@@ -17,7 +17,7 @@ RUN apt-get install -y libgl1-mesa-glx libcanberra-gtk3-module fonts-ubuntu ligh
 ENV DISPLAY=:0
 ENV TZ=
 
-RUN useradd -U -G audio -m -s /bin/bash ${USER}
+RUN useradd -U -G audio,video -m -s /bin/bash ${USER}
 USER ${USER}
 ENV USER=${USER}
 WORKDIR /home/${USER}/

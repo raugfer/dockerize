@@ -24,4 +24,5 @@ Start the container
         -v $HOME/.config/brave-browser-docker/:/home/ubuntu/.config/BraveSoftware/Brave-Browser/ \
         -v $HOME/Downloads/:/home/ubuntu/Downloads/ \
         --device /dev/snd \
+        --device /dev/video0 \
         brave-browser

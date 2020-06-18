@@ -25,4 +25,5 @@ Start the container
         -v $HOME/Downloads/:/home/ubuntu/Downloads/ \
         --device /dev/dri \
         --device /dev/snd \
+        --device /dev/video0 \
         google-chrome

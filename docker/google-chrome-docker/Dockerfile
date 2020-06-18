@@ -17,7 +17,7 @@ RUN apt-get install -y libcanberra-gtk3-module fonts-ubuntu light-themes
 ENV DISPLAY=:0
 ENV TZ=
 
-RUN useradd -U -G audio -m -s /bin/bash ${USER}
+RUN useradd -U -G audio,video -m -s /bin/bash ${USER}
 USER ${USER}
 ENV USER=${USER}
 WORKDIR /home/${USER}/

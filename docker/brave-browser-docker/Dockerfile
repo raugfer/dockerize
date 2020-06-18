@@ -17,7 +17,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y brave-browser fonts-noto-c
 ENV DISPLAY=:0
 ENV TZ=
 
-RUN useradd -U -G audio -m -s /bin/bash ${USER}
+RUN useradd -U -G audio,video -m -s /bin/bash ${USER}
 USER ${USER}
 ENV USER=${USER}
 WORKDIR /home/${USER}/

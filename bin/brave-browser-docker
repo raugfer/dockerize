@@ -20,5 +20,6 @@ docker run \
 	-v /etc/localtime:/etc/localtime:ro \
 	--device /dev/dri \
 	--device /dev/snd \
+	--device /dev/video0 \
 	--memory=5g \
 	$USER/brave-browser:stable-current
