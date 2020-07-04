@@ -1,0 +1,17 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/ocaml:4.08 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/ocaml-docker/
+mkdir -p $HOME/Projects/
+docker run \
+	-it \
+	--hostname ocaml \
+	--rm \
+	--name ocaml \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-w $PWD \
+	-e TERM=$TERM \
+	$USER/ocaml:4.08 \
+	bash -c 'eval $(opam env);$SHELL'
