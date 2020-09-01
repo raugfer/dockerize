@@ -1,0 +1,19 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/zoom:5.2 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/zoom-docker/
+mkdir -p $HOME/.config/zoom-docker/
+docker run \
+	-d \
+	--rm \
+	--name zoom \
+	-e DISPLAY \
+	-e TZ \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/zoom-docker/:$HOME/.zoom/ \
+	-v /etc/localtime:/etc/localtime:ro \
+	--device /dev/snd \
+	--device /dev/video0 \
+	$USER/zoom:5.2
