@@ -1,7 +1,7 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t $USER/discord:0.0.11 \
+	-t $USER/discord:0.0.12 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/discord-docker/
 mkdir -p $HOME/.config/discord-docker/
@@ -15,4 +15,4 @@ docker run \
 	-v $HOME/.config/discord-docker/:$HOME/.config/discord/ \
 	--device /dev/snd \
 	--device /dev/video0 \
-	$USER/discord:0.0.11
+	$USER/discord:0.0.12
