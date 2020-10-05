@@ -1,4 +1,4 @@
-FROM node:10.21.0
+FROM node:10.22.1
 
 MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
