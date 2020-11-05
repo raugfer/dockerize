@@ -12,6 +12,7 @@ docker run \
 	--cap-add SYS_ADMIN \
 	-e DISPLAY \
 	-e TZ \
+	-e UA \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 	-v $HOME/Downloads/:$HOME/Downloads/ \
 	-v $HOME/.config/opera-developer-docker/:$HOME/.config/opera-developer/ \
