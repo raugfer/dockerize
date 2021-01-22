@@ -1,4 +1,4 @@
-FROM node:10.22.1
+FROM node:14.15.4
 
 MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
@@ -8,7 +8,7 @@ ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y sudo
+RUN apt-get install -y sudo nano
 
 RUN groupmod -n ${USER} node
 RUN usermod -l ${USER} -a -G sudo -d /home/${USER} -m node
