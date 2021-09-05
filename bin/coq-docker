@@ -1,7 +1,7 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t $USER/coq:8.6 \
+	-t $USER/coq:8.11 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/coq-docker/
 mkdir -p $HOME/Projects/
@@ -13,5 +13,5 @@ docker run \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	-w $PWD \
 	-e TERM=$TERM \
-	$USER/coq:8.6 \
+	$USER/coq:8.11 \
 	bash
