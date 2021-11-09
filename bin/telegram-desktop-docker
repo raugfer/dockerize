@@ -1,0 +1,17 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/telegram-desktop:3.2.2 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/telegram-desktop-docker/
+mkdir -p $HOME/.config/telegram-desktop-docker/ $HOME/Downloads/
+docker run \
+	-d \
+	--rm \
+	--name telegram-desktop \
+	-e DISPLAY \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/telegram-desktop-docker/:$HOME/.local/share/TelegramDesktop/ \
+	-v $HOME/Downloads/:$HOME/Downloads/ \
+	$USER/telegram-desktop:3.2.2
+
