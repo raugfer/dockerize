@@ -1,4 +1,4 @@
-FROM rust:1.44
+FROM rust:1.56
 
 MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
