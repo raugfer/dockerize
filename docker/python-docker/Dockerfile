@@ -1,4 +1,4 @@
-FROM python:3.6.8
+FROM python:3.9.13
 
 MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
