@@ -8,7 +8,7 @@ ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y sudo coq coqide proofgeneral
+RUN apt-get install -y sudo make nano coq
 
 RUN useradd -U -G sudo -m -s /bin/bash ${USER}
 RUN echo "${USER} ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER}
