@@ -10,7 +10,7 @@ mkdir -p \
 	$HOME/.config/gnucash-docker/local-share/ \
 	$HOME/Documents/
 docker run \
-	-it \
+	-d \
 	--rm \
 	--name gnucash \
 	-e DISPLAY \
