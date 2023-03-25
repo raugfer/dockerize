@@ -8,8 +8,7 @@ ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y gnucash
-RUN apt-get install -y dbus-x11 libcanberra-gtk3-module
+RUN apt-get install -y gnucash dbus-x11 libcanberra-gtk3-module
 
 ENV DISPLAY=:0
 ENV TZ=
