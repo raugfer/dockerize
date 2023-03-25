@@ -1,0 +1,27 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/gnucash:4.8 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/gnucash-docker/
+mkdir -p \
+	$HOME/.config/gnucash-docker/config-dconf/ \
+	$HOME/.config/gnucash-docker/config-gnucash/ \
+	$HOME/.config/gnucash-docker/local-share/ \
+	$HOME/Documents/
+docker run \
+	-it \
+	--rm \
+	--name gnucash \
+	-e DISPLAY \
+	-e TZ \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/gnucash-docker/config-dconf/:$HOME/.config/dconf/ \
+	-v $HOME/.config/gnucash-docker/config-gnucash/:$HOME/.config/gnucash/ \
+	-v $HOME/.config/gnucash-docker/local-share/:$HOME/.local/share/ \
+	-v $HOME/Documents/:$HOME/Documents/ \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-v /run/dbus/:/run/dbus/:rw \
+	-v /etc/localtime:/etc/localtime:ro \
+	--device /dev/snd \
+	$USER/gnucash:4.8
