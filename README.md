@@ -14,5 +14,6 @@ This was developed for my personal use and shared to help others achieve the sam
 * [Keybase](docker/keybase-docker/README.md)
 * [Ledger Live](docker/ledger-live-docker/README.md)
 * [Opera Developer](docker/opera-developer-docker/README.md)
+* [Thunderbird](docker/thunderbird-docker/README.md)
 * [Visual Studio Code](docker/visual-studio-code-docker/README.md)
 * [Zoom](docker/zoom-docker/README.md)
