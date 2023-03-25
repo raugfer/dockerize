@@ -8,7 +8,7 @@ ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y gnucash dbus-x11 libcanberra-gtk3-module
+RUN apt-get install -y gnucash dbus-x11 libcanberra-gtk3-module yaru-theme-gtk yaru-theme-icon yaru-theme-sound
 
 ENV DISPLAY=:0
 ENV TZ=
@@ -17,4 +17,6 @@ RUN useradd -U -G audio -m -s /bin/bash ${USER}
 USER ${USER}
 ENV USER=${USER}
 WORKDIR /home/${USER}/
+RUN gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark"
+RUN gsettings set org.gnome.desktop.wm.preferences theme "Adwaita"
 CMD gnucash
