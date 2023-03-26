@@ -8,7 +8,14 @@ ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y dbus-x11 fonts-noto-color-emoji fonts-ubuntu libcanberra-gtk3-module libegl1 libgl1 libotr5 libpci3 thunderbird yaru-theme-gtk yaru-theme-icon yaru-theme-sound
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
+	dbus-x11 fonts-dejavu-core fonts-freefont-ttf fonts-indic \
+	fonts-kacst-one fonts-khmeros-core fonts-lao fonts-liberation \
+	fonts-liberation2 fonts-lklug-sinhala fonts-noto-cjk \
+	fonts-noto-color-emoji fonts-opensymbol fonts-sil-abyssinica \
+	fonts-sil-padauk fonts-thai-tlwg fonts-tibetan-machine fonts-ubuntu \
+	libcanberra-gtk3-module libegl1 libgl1 libotr5 libpci3 thunderbird \
+	yaru-theme-gtk yaru-theme-icon yaru-theme-sound
 
 ENV DISPLAY=:0
 ENV TZ=
