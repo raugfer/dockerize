@@ -8,7 +8,7 @@ ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y gnucash dbus-x11 libcanberra-gtk3-module yaru-theme-gtk yaru-theme-icon yaru-theme-sound
+RUN apt-get install -y dbus-x11 fonts-ubuntu gnucash libcanberra-gtk3-module yaru-theme-gtk yaru-theme-icon yaru-theme-sound
 
 ENV DISPLAY=:0
 ENV TZ=
