@@ -9,6 +9,7 @@ This was developed for my personal use and shared to help others achieve the sam
 * [Android Studio](docker/android-studio-docker/README.md)
 * [Brave Browser](docker/brave-browser-docker/README.md)
 * [Discord](docker/discord-docker/README.md)
+* [GIMP](docker/gimp-docker/README.md)
 * [Google Chrome](docker/google-chrome-docker/README.md)
 * [GnuCash](docker/gnucash-docker/README.md)
 * [Keybase](docker/keybase-docker/README.md)
