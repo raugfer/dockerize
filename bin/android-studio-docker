@@ -1,7 +1,7 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t $USER/android-studio:2021.3.1.17 \
+	-t $USER/android-studio:2022.1.1.21 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/android-studio-docker/
 mkdir -p $HOME/.config/android-studio-docker/ $HOME/Projects/
@@ -17,6 +17,6 @@ docker run \
 	--device /dev/kvm \
 	--device /dev/snd \
 	--device /dev/bus/usb \
-	$USER/android-studio:2021.3.1.17
+	$USER/android-studio:2022.1.1.21
 # TODO improve the approach for granting read/write access to devices
 docker exec -u root android-studio chmod 666 /dev/kvm /dev/bus/usb/*/*
