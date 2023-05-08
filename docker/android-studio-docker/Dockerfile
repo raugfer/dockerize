@@ -4,14 +4,14 @@ MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
 LABEL Description "Android Studio"
 
-ARG URL=https://dl.google.com/dl/android/studio/ide-zips/2022.1.1.21/android-studio-2022.1.1.21-linux.tar.gz
+ARG URL=https://dl.google.com/dl/android/studio/ide-zips/2022.2.1.19/android-studio-2022.2.1.19-linux.tar.gz
 ARG USER=ubuntu
 
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y wget
-RUN wget -q -O /tmp/android-studio-2022.1.1.21-linux.tar.gz ${URL}
-RUN cd /opt/ && tar xzf /tmp/android-studio-2022.1.1.21-linux.tar.gz
+RUN wget -q -O /tmp/android-studio-2022.2.1.19-linux.tar.gz ${URL}
+RUN cd /opt/ && tar xzf /tmp/android-studio-2022.2.1.19-linux.tar.gz
 RUN apt-get install -y libxext6 libxrender1 libxtst6 libxi6 libfreetype6 libsecret-1-0 qemu-kvm usbutils
 
 # flutter dependencies
