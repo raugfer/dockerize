@@ -1,0 +1,18 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/ubuntu:22.04 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/ubuntu-docker/
+mkdir -p $HOME/Projects/
+docker run \
+	-it \
+	--hostname ubuntu \
+	--rm \
+	--name ubuntu \
+	--network=host \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-w $PWD \
+	-e TERM=$TERM \
+	$USER/ubuntu:22.04 \
+	bash
