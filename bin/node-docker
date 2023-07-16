@@ -1,7 +1,7 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t $USER/node:16.19.1 \
+	-t $USER/node:16.20.1 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/node-docker/
 mkdir -p $HOME/Projects/
@@ -14,5 +14,5 @@ docker run \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	-w $PWD \
 	-e TERM=$TERM \
-	$USER/node:16.19.1 \
+	$USER/node:16.20.1 \
 	bash
