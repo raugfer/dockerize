@@ -1,0 +1,22 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/inkscape:1.1.2 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/inkscape-docker/
+mkdir -p \
+	$HOME/.config/inkscape-docker/ \
+	$HOME/Downloads/
+docker run \
+	-d \
+	--rm \
+	--name inkscape \
+	-e DISPLAY \
+	-e TZ \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/inkscape-docker/:$HOME/.config/inkscape/ \
+	-v $HOME/Downloads/:$HOME/Downloads/ \
+	-v /run/dbus/:/run/dbus/:rw \
+	-v /etc/localtime:/etc/localtime:ro \
+	--device /dev/snd \
+	$USER/inkscape:1.1.2
