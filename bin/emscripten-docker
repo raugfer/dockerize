@@ -1,0 +1,19 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/emscripten:3.1.47 \
+	--build-arg USER=$USER \
+	--build-arg VERSION=3.1.47 \
+	`dirname $0`/../docker/emscripten-docker/
+mkdir -p $HOME/Projects/
+docker run \
+	-it \
+	--hostname emscripten \
+	--rm \
+	--name emscripten \
+	--network=host \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-w $PWD \
+	-e TERM=$TERM \
+	$USER/emscripten:3.1.47 \
+	bash
