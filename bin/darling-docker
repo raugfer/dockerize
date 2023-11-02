@@ -1,6 +1,6 @@
 #!/bin/sh
-#	-q \
 docker build \
+	-q \
 	-t $USER/darling:11.5 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/darling-docker/

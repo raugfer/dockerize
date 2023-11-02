@@ -19,5 +19,6 @@ Start the container
         --hostname darling \
         --rm \
         --name darling \
+        --privileged \
         -v $HOME/Projects/:/home/ubuntu/Projects/ \
         darling

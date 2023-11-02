@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y automake bison clang-15 cmake curl \
 RUN git lfs install
 RUN cd /tmp && git clone --recursive https://github.com/darlinghq/darling.git
 RUN mkdir /tmp/darling/build
-RUN cd /tmp/darling/build && cmake -DTARGET_i386=OFF ..
+RUN cd /tmp/darling/build && cmake ..
 RUN cd /tmp/darling/build && make install
 
 RUN useradd -U -G sudo -m -s /bin/bash ${USER}
