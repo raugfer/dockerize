@@ -8,6 +8,7 @@ This was developed for my personal use and shared to help others achieve the sam
 
 * [Android Studio](docker/android-studio-docker/README.md)
 * [Brave Browser](docker/brave-browser-docker/README.md)
+* [Darling](docker/darling-docker/README.md)
 * [Discord](docker/discord-docker/README.md)
 * [Emscripten](docker/emscripten-docker/README.md)
 * [Flutter](docker/flutter-docker/README.md)

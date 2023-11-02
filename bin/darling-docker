@@ -1,0 +1,17 @@
+#!/bin/sh
+#	-q \
+docker build \
+	-t $USER/darling:11.5 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/darling-docker/
+mkdir -p $HOME/Projects/
+docker run \
+	-it \
+	--hostname darling \
+	--rm \
+	--name darling \
+	--network=host \
+	--privileged \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-w $PWD \
+	$USER/darling:11.5
