@@ -1,0 +1,19 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/flutter:3.13.9 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/flutter-docker/
+mkdir -p $HOME/Projects/
+docker run \
+	-it \
+	--hostname flutter \
+	--rm \
+	--name flutter \
+	--network=host \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-w $PWD \
+	-e TERM=$TERM \
+	--device /dev/bus/usb \
+	$USER/flutter:3.13.9 \
+	bash
