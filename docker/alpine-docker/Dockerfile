@@ -6,9 +6,7 @@ LABEL Description "Alpine"
 
 ARG USER=alpine
 
-RUN apk update
-RUN apk upgrade
-RUN apk --no-cache add sudo
+RUN apk update && apk upgrade && apk --no-cache add sudo
 
 RUN addgroup ${USER}
 RUN adduser -D -G ${USER} ${USER}

@@ -6,9 +6,9 @@ LABEL Description "GIMP"
 
 ARG USER=ubuntu
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y dbus-x11 fonts-dejavu-core fonts-freefont-ttf \
+RUN apt-get update && \
+	apt-get upgrade -y && \
+	apt-get install -y dbus-x11 fonts-dejavu-core fonts-freefont-ttf \
 	fonts-indic fonts-kacst-one fonts-khmeros-core fonts-lao \
 	fonts-liberation fonts-liberation2 fonts-lklug-sinhala fonts-noto-cjk \
 	fonts-noto-color-emoji fonts-opensymbol fonts-sil-abyssinica \

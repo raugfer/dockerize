@@ -6,9 +6,7 @@ LABEL Description "Ubuntu"
 
 ARG USER=ubuntu
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y sudo
+RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo
 
 RUN useradd -U -G sudo -m -s /bin/bash ${USER}
 RUN echo "${USER} ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER}
