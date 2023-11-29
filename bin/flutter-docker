@@ -1,7 +1,7 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t $USER/flutter:3.13.9 \
+	-t $USER/flutter:3.16.1 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/flutter-docker/
 mkdir -p $HOME/Projects/
@@ -15,5 +15,5 @@ docker run \
 	-w $PWD \
 	-e TERM=$TERM \
 	--device /dev/bus/usb \
-	$USER/flutter:3.13.9 \
+	$USER/flutter:3.16.1 \
 	bash

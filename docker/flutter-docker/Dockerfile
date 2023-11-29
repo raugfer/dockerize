@@ -4,13 +4,13 @@ MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
 LABEL Description "Flutter"
 
-ARG URL=https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.9-stable.tar.xz
+ARG URL=https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.16.1-stable.tar.xz
 ARG API=34
 ARG USER=ubuntu
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y curl file git libglu1-mesa openjdk-17-jre sudo unzip usbutils xz-utils zip
+RUN apt-get update && \
+	apt-get upgrade -y && \
+	apt-get install -y curl file git libglu1-mesa openjdk-17-jre sudo unzip usbutils xz-utils zip
 
 RUN curl -o /tmp/commandlinetools.zip https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip
 RUN cd /opt/ && unzip /tmp/commandlinetools.zip
@@ -28,7 +28,7 @@ RUN curl -o /tmp/flutter.tar.xz ${URL}
 RUN tar xvf /tmp/flutter.tar.xz --no-same-owner
 RUN rm -rf /tmp/flutter.tar.xz
 
-RUN flutter/bin/flutter --disable-telemetry
+RUN flutter/bin/flutter --disable-analytics
 RUN flutter/bin/flutter config --no-analytics --no-enable-web --no-enable-linux-desktop --android-sdk=/home/${USER}/android-sdk/
 RUN flutter/bin/flutter precache
 RUN yes | flutter/bin/flutter doctor --android-licenses
