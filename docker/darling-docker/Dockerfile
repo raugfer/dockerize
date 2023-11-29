@@ -6,8 +6,9 @@ LABEL Description "Darling"
 
 ARG USER=ubuntu
 
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get update && apt-get install -y automake bison clang-15 cmake curl \
+RUN apt-get update && \
+	apt-get upgrade -y && \
+	apt-get install -y automake bison clang-15 cmake curl \
 	flex gcc-multilib git git-lfs libavcodec-dev libavformat-dev \
 	libavutil-dev libbsd-dev libc6-dev-i386 libcairo2-dev libcap2-bin \
 	libdbus-1-dev libegl1-mesa-dev libelf-dev libfontconfig1-dev \
