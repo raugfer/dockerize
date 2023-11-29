@@ -5,8 +5,6 @@ docker build \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/python-docker/
 mkdir -p $HOME/Projects/
-#	--network=host \
-#	--gpus all \
 docker run \
 	-it \
 	--hostname python \
