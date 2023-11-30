@@ -29,7 +29,7 @@ RUN tar xvf /tmp/flutter.tar.xz --no-same-owner
 RUN rm -rf /tmp/flutter.tar.xz
 
 RUN flutter/bin/flutter --disable-analytics
-RUN flutter/bin/flutter config --no-analytics --no-enable-web --no-enable-linux-desktop --android-sdk=/home/${USER}/android-sdk/
+RUN flutter/bin/flutter config --no-analytics --no-enable-web --no-enable-linux-desktop --no-enable-macos-desktop --no-enable-windows-desktop --android-sdk=/home/${USER}/android-sdk/
 RUN flutter/bin/flutter precache
 RUN yes | flutter/bin/flutter doctor --android-licenses
 
