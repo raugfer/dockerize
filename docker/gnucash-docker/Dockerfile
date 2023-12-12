@@ -6,15 +6,17 @@ LABEL Description "GnuCash"
 
 ARG USER=ubuntu
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y dbus-x11 fonts-dejavu-core fonts-freefont-ttf \
+RUN \
+	apt-get update && \
+	apt-get upgrade -y && \
+	apt-get install -y dbus-x11 fonts-dejavu-core fonts-freefont-ttf \
 	fonts-indic fonts-kacst-one fonts-khmeros-core fonts-lao \
 	fonts-liberation fonts-liberation2 fonts-lklug-sinhala fonts-noto-cjk \
 	fonts-noto-color-emoji fonts-opensymbol fonts-sil-abyssinica \
 	fonts-sil-padauk fonts-thai-tlwg fonts-tibetan-machine fonts-ubuntu \
 	gnucash libcanberra-gtk3-module yaru-theme-gtk yaru-theme-icon \
-	yaru-theme-sound
+	yaru-theme-sound && \
+	apt-get clean
 
 ENV DISPLAY=:0
 ENV TZ=
