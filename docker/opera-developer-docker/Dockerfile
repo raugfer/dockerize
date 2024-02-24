@@ -4,12 +4,11 @@ MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
 LABEL Description "Opera Developer"
 
-ARG URL=https://download5.operacdn.com/pub/opera-developer/107.0.5012.0/linux/opera-developer_107.0.5012.0_amd64.deb
+ARG URL=https://download5.operacdn.com/pub/opera-developer/109.0.5083.0/linux/opera-developer_109.0.5083.0_amd64.deb
 ARG USER=ubuntu
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y wget gdebi-core && apt-get clean
-RUN wget -q -O /tmp/opera-developer_106.0.4977.0_amd64.deb ${URL}
-RUN gdebi --n /tmp/opera-developer_106.0.4977.0_amd64.deb
+RUN wget -q -O /tmp/opera-developer.deb ${URL} && gdebi --n /tmp/opera-developer.deb && rm -rf /tmp/opera-developer.deb
 RUN DEBIAN_FRONTEND=noninteractive \
 	apt-get update && \
 	apt-get install -y fonts-dejavu-core fonts-freefont-ttf fonts-indic \
