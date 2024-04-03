@@ -15,4 +15,5 @@ RUN usermod -l ${USER} -a -G sudo -d /home/${USER} -m node
 RUN echo "${USER} ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER}
 USER ${USER}
 ENV USER=${USER}
+ENV MORE='-e'
 WORKDIR /home/${USER}/
