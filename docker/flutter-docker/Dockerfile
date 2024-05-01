@@ -4,7 +4,7 @@ MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
 LABEL Description "Flutter"
 
-ARG URL=https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.1-stable.tar.xz
+ARG URL=https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.6-stable.tar.xz
 ARG API=34
 ARG USER=ubuntu
 
