@@ -1,7 +1,7 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t $USER/rust:1.56 \
+	-t $USER/rust:1.78 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/rust-docker/
 mkdir -p $HOME/Projects/
@@ -13,5 +13,5 @@ docker run \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	-w $PWD \
 	-e TERM=$TERM \
-	$USER/rust:1.56 \
+	$USER/rust:1.78 \
 	bash

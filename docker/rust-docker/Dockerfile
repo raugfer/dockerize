@@ -1,4 +1,4 @@
-FROM rust:1.56
+FROM rust:1.78
 
 MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
@@ -6,9 +6,7 @@ LABEL Description "Rust"
 
 ARG USER=ubuntu
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y sudo
+RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo && apt-get clean
 RUN rustup target add wasm32-wasi
 
 RUN useradd -U -G sudo -m -s /bin/bash ${USER}
