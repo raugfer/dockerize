@@ -6,9 +6,7 @@ LABEL Description "Node"
 
 ARG USER=ubuntu
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y sudo nano
+RUN apt-get update && apt-get upgrade -y && apt-get install -y nano sudo && apt-get clean
 
 RUN groupmod -n ${USER} node
 RUN usermod -l ${USER} -a -G sudo -d /home/${USER} -m node
