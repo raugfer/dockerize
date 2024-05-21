@@ -1,0 +1,30 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/gedit:41.0 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/gedit-docker/
+mkdir -p \
+	$HOME/.config/gedit-docker/config-dconf/ \
+	$HOME/.config/gedit-docker/local-share/ \
+	$HOME/Desktop/ \
+	$HOME/Documents/ \
+	$HOME/Downloads/ \
+	$HOME/Projects/
+docker run \
+	-d \
+	--rm \
+	--name gedit \
+	-e DISPLAY \
+	-e TZ \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v $HOME/.config/gedit-docker/config-dconf/:$HOME/.config/dconf/ \
+	-v $HOME/.config/gedit-docker/local-share/:$HOME/.local/share/ \
+	-v $HOME/Desktop/:$HOME/Desktop/ \
+	-v $HOME/Documents/:$HOME/Documents/ \
+	-v $HOME/Downloads/:$HOME/Downloads/ \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-v /run/dbus/:/run/dbus/:rw \
+	-v /etc/localtime:/etc/localtime:ro \
+	--device /dev/snd \
+	$USER/gedit:41.0
