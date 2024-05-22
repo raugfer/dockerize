@@ -12,8 +12,9 @@ RUN \
 	apt-get install -y dbus-x11 fonts-dejavu-core fonts-dejavu-mono \
 	fonts-droid-fallback fonts-liberation fonts-liberation-sans-narrow \
 	fonts-noto-cjk fonts-noto-color-emoji fonts-noto-core fonts-noto-mono \
-	fonts-ubuntu fonts-urw-base35 gnucash libcanberra-gtk3-module \
-	yaru-theme-gtk yaru-theme-icon yaru-theme-sound && \
+	fonts-ubuntu fonts-urw-base35 gnucash=1:5.5-1.2build1 \
+	libcanberra-gtk3-module yaru-theme-gtk yaru-theme-icon \
+	yaru-theme-sound && \
 	apt-get clean
 
 ENV DISPLAY=:0
