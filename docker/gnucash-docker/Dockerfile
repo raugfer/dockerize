@@ -20,7 +20,7 @@ ENV DISPLAY=:0
 ENV TZ=
 
 RUN groupmod -n ${USER} ubuntu
-RUN usermod -l ${USER} -a -G sudo -d /home/${USER} -m ubuntu
+RUN usermod -l ${USER} -a -G audio -d /home/${USER} -m ubuntu
 USER ${USER}
 ENV USER=${USER}
 WORKDIR /home/${USER}/
