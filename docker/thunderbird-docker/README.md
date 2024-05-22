@@ -10,7 +10,7 @@ Build the image locally
 
 Create the settings folder
 
-    $ mkdir -p $HOME/.config/thunderbird-docker/
+    $ mkdir -p $HOME/.config/dockerize/thunderbird/
 
 Start the container
 
@@ -20,7 +20,7 @@ Start the container
         --name thunderbird \
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-        -v $HOME/.config/thunderbird-docker/:/home/ubuntu/.thunderbird/ \
+        -v $HOME/.config/dockerize/thunderbird/:/home/ubuntu/.thunderbird/ \
         -v $HOME/Downloads/:/home/ubuntu/Downloads/ \
         --device /dev/snd \
         thunderbird

@@ -1,11 +1,11 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t $USER/thunderbird:115.6.0 \
+	-t $USER/thunderbird:115.11.0 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/thunderbird-docker/
 mkdir -p \
-	$HOME/.config/thunderbird-docker/ \
+	$HOME/.config/dockerize/thunderbird/ \
 	$HOME/Downloads/ \
 	$HOME/Mail/
 docker run \
@@ -15,10 +15,10 @@ docker run \
 	-e DISPLAY \
 	-e TZ \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-	-v $HOME/.config/thunderbird-docker/:$HOME/.thunderbird/ \
+	-v $HOME/.config/dockerize/thunderbird/:$HOME/.thunderbird/ \
 	-v $HOME/Downloads/:$HOME/Downloads/ \
 	-v $HOME/Mail/:$HOME/Mail/ \
 	-v /run/dbus/:/run/dbus/:rw \
 	-v /etc/localtime:/etc/localtime:ro \
 	--device /dev/snd \
-	$USER/thunderbird:115.6.0
+	$USER/thunderbird:115.11.0
