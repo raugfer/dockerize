@@ -10,7 +10,7 @@ Build the image locally
 
 Create the settings folder
 
-    $ mkdir -p $HOME/.config/gimp-docker/ $HOME/Documents/
+    $ mkdir -p $HOME/.config/dockerize/gimp/ $HOME/Documents/
 
 Start the container
 
@@ -20,7 +20,7 @@ Start the container
         --name gimp \
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-        -v $HOME/.config/gimp-docker/:/home/ubuntu/.config/GIMP/ \
+        -v $HOME/.config/dockerize/gimp/:/home/ubuntu/.config/GIMP/ \
         -v $HOME/Documents/:/home/ubuntu/Documents/ \
         --device /dev/snd \
         gimp
