@@ -10,7 +10,7 @@ Build the image locally
 
 Create the settings folder
 
-    $ mkdir -p $HOME/.config/brave-browser-docker/ $HOME/Downloads/
+    $ mkdir -p $HOME/.config/dockerize/brave-browser/ $HOME/Downloads/
 
 Start the container
 
@@ -21,7 +21,7 @@ Start the container
         --cap-add SYS_ADMIN \
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-        -v $HOME/.config/brave-browser-docker/:/home/ubuntu/.config/BraveSoftware/Brave-Browser/ \
+        -v $HOME/.config/dockerize/brave-browser/:/home/ubuntu/.config/BraveSoftware/Brave-Browser/ \
         -v $HOME/Downloads/:/home/ubuntu/Downloads/ \
         --device /dev/snd \
         --device /dev/video0 \
