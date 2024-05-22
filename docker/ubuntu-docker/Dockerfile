@@ -8,7 +8,8 @@ ARG USER=ubuntu
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo
 
-RUN useradd -U -G sudo -m -s /bin/bash ${USER}
+RUN groupmod -n ${USER} ubuntu
+RUN usermod -l ${USER} -a -G sudo -d /home/${USER} -m ubuntu
 RUN echo "${USER} ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER}
 USER ${USER}
 ENV USER=${USER}
