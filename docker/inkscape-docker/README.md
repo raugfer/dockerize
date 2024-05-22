@@ -10,7 +10,7 @@ Build the image locally
 
 Create the settings folder
 
-    $ mkdir -p $HOME/.config/inkscape-docker/ $HOME/Documents/
+    $ mkdir -p $HOME/.config/dockerize/inkscape/ $HOME/Documents/
 
 Start the container
 
@@ -20,7 +20,7 @@ Start the container
         --name inkscape \
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-        -v $HOME/.config/inkscape-docker/:/home/ubuntu/.config/inkscape/ \
+        -v $HOME/.config/dockerize/inkscape/:/home/ubuntu/.config/inkscape/ \
         -v $HOME/Documents/:/home/ubuntu/Documents/ \
         --device /dev/snd \
         inkscape
