@@ -10,10 +10,12 @@ docker run \
 	--rm \
 	--name opera-developer \
 	--cap-add SYS_ADMIN \
+	--ipc=host \
 	-e DISPLAY \
 	-e TZ \
 	-e UA \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+	-v /media/:$HOME/Media/ \
 	-v $HOME/Downloads/:$HOME/Downloads/ \
 	-v $HOME/.config/opera-developer-docker/:$HOME/.config/opera-developer/ \
 	-v /dev/shm:/dev/shm \
