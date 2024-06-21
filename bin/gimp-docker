@@ -3,21 +3,24 @@ docker build \
 	-q \
 	-t $USER/gimp:2.10.36 \
 	--build-arg USER=$USER \
-	`dirname $0`/../docker/gimp-docker/
+	`dirname $0`/../docker/gimp-docker/ \
+&& \
 mkdir -p \
 	$HOME/.config/dockerize/gimp/ \
-	$HOME/Downloads/
+	$HOME/Downloads/ \
+	$HOME/Pictures/ \
+&& \
 docker run \
 	-d \
 	--rm \
 	--name gimp \
 	-e DISPLAY \
 	-e TZ \
-	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 	-v $HOME/.config/dockerize/gimp/:$HOME/.config/GIMP/ \
 	-v $HOME/Downloads/:$HOME/Downloads/ \
 	-v $HOME/Pictures/:$HOME/Pictures/ \
-	-v /run/dbus/:/run/dbus/:rw \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/:ro \
 	-v /etc/localtime:/etc/localtime:ro \
+	-v /run/dbus/:/run/dbus/ \
 	--device /dev/snd \
 	$USER/gimp:2.10.36
