@@ -3,23 +3,26 @@ docker build \
 	-q \
 	-t $USER/gnucash:5.5 \
 	--build-arg USER=$USER \
-	`dirname $0`/../docker/gnucash-docker/
+	`dirname $0`/../docker/gnucash-docker/ \
+&& \
 mkdir -p \
 	$HOME/.config/dockerize/gnucash/config/ \
 	$HOME/.config/dockerize/gnucash/local/ \
-	$HOME/Documents/
+	$HOME/Documents/ \
+	$HOME/Projects/ \
+&& \
 docker run \
 	-d \
 	--rm \
 	--name gnucash \
 	-e DISPLAY \
 	-e TZ \
-	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
 	-v $HOME/.config/dockerize/gnucash/config/:$HOME/.config/ \
 	-v $HOME/.config/dockerize/gnucash/local/:$HOME/.local/ \
 	-v $HOME/Documents/:$HOME/Documents/ \
 	-v $HOME/Projects/:$HOME/Projects/ \
-	-v /run/dbus/:/run/dbus/:rw \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/:ro \
 	-v /etc/localtime:/etc/localtime:ro \
+	-v /run/dbus/:/run/dbus/ \
 	--device /dev/snd \
 	$USER/gnucash:5.5
