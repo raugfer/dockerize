@@ -10,7 +10,7 @@ Build the image locally
 
 Create the settings folder
 
-    $ mkdir -p $HOME/.config/opera-developer-docker/ $HOME/Downloads/
+    $ mkdir -p $HOME/.config/dockerize/opera-developer/ $HOME/Downloads/
 
 Start the container
 
@@ -21,9 +21,9 @@ Start the container
         --cap-add SYS_ADMIN \
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-        -v $HOME/.config/opera-developer-docker/:/home/ubuntu/.config/opera-developer/ \
+        -v $HOME/.config/dockerize/opera-developer/:/home/ubuntu/.config/opera-developer/ \
         -v $HOME/Downloads/:/home/ubuntu/Downloads/ \
         --device /dev/dri \
         --device /dev/snd \
         --device /dev/video0 \
-        google-chrome
+        opera-developer
