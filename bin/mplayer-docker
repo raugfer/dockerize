@@ -1,0 +1,28 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/mplayer:1.5 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/mplayer-docker/ \
+&& \
+mkdir -p \
+	$HOME/Downloads/ \
+	/media/ \
+&& \
+docker run \
+	-it \
+	--rm \
+	--name mplayer \
+	--hostname mplayer \
+	--ipc=host \
+	--network=none \
+	-e DISPLAY \
+	-e TERM=$TERM \
+	-e PULSE_SERVER=unix:/run/user/1000/pulse/native \
+	-w $PWD \
+	-v $HOME/Downloads/:$HOME/Downloads/ \
+	-v /media/:/media/ \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/:ro \
+	-v /run/user/1000/pulse/native:/run/user/1000/pulse/native \
+	--device /dev/video0 \
+	$USER/mplayer:1.5

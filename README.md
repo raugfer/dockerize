@@ -18,6 +18,7 @@ This was developed for my personal use and shared to help others achieve the sam
 * [Inkscape](docker/inkscape-docker/README.md)
 * [Keybase](docker/keybase-docker/README.md)
 * [Ledger Live](docker/ledger-live-docker/README.md)
+* [MPlayer](docker/mplayer-docker/README.md)
 * [Opera Developer](docker/opera-developer-docker/README.md)
 * [Thunderbird](docker/thunderbird-docker/README.md)
 * [Ubuntu](docker/ubuntu-docker/README.md)
