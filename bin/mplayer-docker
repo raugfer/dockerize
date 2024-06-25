@@ -24,5 +24,4 @@ docker run \
 	-v /media/:/media/ \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/:ro \
 	-v /run/user/1000/pulse/native:/run/user/1000/pulse/native \
-	--device /dev/video0 \
 	$USER/mplayer:1.5

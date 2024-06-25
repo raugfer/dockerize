@@ -26,5 +26,4 @@ Start the container
         -v $HOME/Downloads/:/home/ubuntu/Downloads/ \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
         -v /run/user/1000/pulse/native:/run/user/1000/pulse/native \
-        --device /dev/video0 \
         mplayer
