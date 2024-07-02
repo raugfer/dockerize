@@ -3,8 +3,11 @@ docker build \
 	-q \
 	-t $USER/node:18.20.1 \
 	--build-arg USER=$USER \
-	`dirname $0`/../docker/node-docker/
-mkdir -p $HOME/Projects/
+	`dirname $0`/../docker/node-docker/ \
+&& \
+mkdir -p \
+	$HOME/Projects/ \
+&& \
 docker run \
 	-it \
 	--hostname node \
