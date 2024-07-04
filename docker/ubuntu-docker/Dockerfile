@@ -17,4 +17,5 @@ RUN usermod -l ${USER} -a -G sudo -d /home/${USER} -m ubuntu
 RUN echo "${USER} ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER}
 USER ${USER}
 ENV USER=${USER}
+RUN touch ~/.sudo_as_admin_successful
 WORKDIR /home/${USER}/
