@@ -20,7 +20,7 @@ RUN \
 	apt-get install -y software-properties-common && \
 	add-apt-repository ppa:mozillateam/ppa && \
 	apt-get update && \
-	apt-get install -y thunderbird=1:115.12.1+build1-0ubuntu0.24.04.1~mt1 && \
+	apt-get install -y thunderbird=1:115.14.0+build1-0ubuntu0.24.04.1~mt1 && \
 	apt-get clean
 
 ENV DISPLAY=:0
