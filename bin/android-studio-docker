@@ -22,6 +22,5 @@ docker run \
 	--device /dev/snd \
 	--device /dev/bus/usb \
 	$USER/android-studio:2024.1.2.13 \
-&& \
 # TODO improve the approach for granting read/write access to devices
 docker exec -u root android-studio chmod 666 /dev/kvm /dev/bus/usb/*/*
