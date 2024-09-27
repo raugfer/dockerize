@@ -1,22 +1,27 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t $USER/android-studio:2022.3.1.20 \
+	-t $USER/android-studio:2024.1.2.13 \
 	--build-arg USER=$USER \
-	`dirname $0`/../docker/android-studio-docker/
-mkdir -p $HOME/.config/android-studio-docker/ $HOME/Projects/
+	`dirname $0`/../docker/android-studio-docker/ \
+&& \
+mkdir -p \
+	$HOME/.config/dockerize/android-studio/ \
+	$HOME/Projects/ \
+&& \
 docker run \
 	-d \
 	--rm \
 	--name android-studio \
 	-e DISPLAY \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/ \
-	-v $HOME/.config/android-studio-docker/:$HOME/ \
+	-v $HOME/.config/dockerize/android-studio/:$HOME/ \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	--device /dev/dri \
 	--device /dev/kvm \
 	--device /dev/snd \
 	--device /dev/bus/usb \
-	$USER/android-studio:2022.3.1.20
+	$USER/android-studio:2024.1.2.13 \
+&& \
 # TODO improve the approach for granting read/write access to devices
 docker exec -u root android-studio chmod 666 /dev/kvm /dev/bus/usb/*/*
