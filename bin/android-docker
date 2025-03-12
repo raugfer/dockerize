@@ -1,0 +1,19 @@
+#!/bin/sh
+docker build \
+	-q \
+	-t $USER/android:35 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/android-docker/ \
+&& \
+mkdir -p \
+	$HOME/.config/dockerize/android/ \
+&& \
+docker run \
+	-d \
+	--rm \
+	--name android \
+	-e DISPLAY \
+	-v $HOME/.config/dockerize/android/:$HOME/.android/ \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/:ro \
+	--device /dev/kvm \
+	$USER/android:35
