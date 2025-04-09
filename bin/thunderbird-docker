@@ -1,7 +1,7 @@
 #!/bin/sh
 docker build \
 	-q \
-	-t $USER/thunderbird:128.7.1 \
+	-t $USER/thunderbird:128.8.1 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/thunderbird-docker/ \
 && \
@@ -23,4 +23,4 @@ docker run \
 	-v /etc/localtime:/etc/localtime:ro \
 	-v /run/dbus/:/run/dbus/ \
 	--device /dev/snd \
-	$USER/thunderbird:128.7.1
+	$USER/thunderbird:128.8.1
