@@ -1,4 +1,6 @@
 #!/bin/sh
+docker image inspect $USER/opera-developer:118.0.5439.0 > /dev/null \
+|| \
 docker build \
 	-q \
 	-t $USER/opera-developer:118.0.5439.0 \

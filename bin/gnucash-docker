@@ -1,4 +1,6 @@
 #!/bin/sh
+docker image inspect $USER/gnucash:5.5 > /dev/null \
+|| \
 docker build \
 	-q \
 	-t $USER/gnucash:5.5 \

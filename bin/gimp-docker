@@ -1,4 +1,6 @@
 #!/bin/sh
+docker image inspect $USER/gimp:2.10.36 > /dev/null \
+|| \
 docker build \
 	-q \
 	-t $USER/gimp:2.10.36 \

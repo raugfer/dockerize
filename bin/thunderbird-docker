@@ -1,4 +1,6 @@
 #!/bin/sh
+docker image inspect $USER/thunderbird:128.8.1 > /dev/null \
+|| \
 docker build \
 	-q \
 	-t $USER/thunderbird:128.8.1 \

@@ -1,4 +1,6 @@
 #!/bin/sh
+docker image inspect $USER/ubuntu:24.04 > /dev/null \
+|| \
 docker build \
 	-q \
 	-t $USER/ubuntu:24.04 \
