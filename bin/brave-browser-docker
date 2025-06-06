@@ -1,5 +1,5 @@
 #!/bin/sh
-docker image inspect $USER/brave-browser:1.77.101 > /dev/null \
+docker image inspect $USER/brave-browser:1.79.118 > /dev/null \
 || \
 docker build \
 	-q \
@@ -28,4 +28,4 @@ docker run \
 	--device /dev/snd \
 	--device /dev/video0 \
 	--memory=8g \
-	$USER/brave-browser:1.77.101
+	$USER/brave-browser:1.79.118
