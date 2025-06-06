@@ -3,7 +3,7 @@ docker image inspect $USER/brave-browser:1.79.118 > /dev/null \
 || \
 docker build \
 	-q \
-	-t $USER/brave-browser:1.77.101 \
+	-t $USER/brave-browser:1.79.118 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/brave-browser-docker/ \
 && \
