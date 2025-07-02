@@ -1,9 +1,9 @@
 #!/bin/sh
-docker image inspect $USER/thunderbird:128.8.1 > /dev/null \
+docker image inspect $USER/thunderbird:128.12.0 > /dev/null \
 || \
 docker build \
 	-q \
-	-t $USER/thunderbird:128.8.1 \
+	-t $USER/thunderbird:128.12.0 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/thunderbird-docker/ \
 && \
@@ -25,4 +25,4 @@ docker run \
 	-v /etc/localtime:/etc/localtime:ro \
 	-v /run/dbus/:/run/dbus/ \
 	--device /dev/snd \
-	$USER/thunderbird:128.8.1
+	$USER/thunderbird:128.12.0
