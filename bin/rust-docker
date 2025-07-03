@@ -1,9 +1,9 @@
 #!/bin/sh
-docker image inspect $USER/rust:1.78 > /dev/null \
+docker image inspect $USER/rust:1.88 > /dev/null \
 || \
 docker build \
 	-q \
-	-t $USER/rust:1.78 \
+	-t $USER/rust:1.88 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/rust-docker/ \
 && \
@@ -18,5 +18,5 @@ docker run \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	-w $PWD \
 	-e TERM=$TERM \
-	$USER/rust:1.78 \
+	$USER/rust:1.88 \
 	bash
