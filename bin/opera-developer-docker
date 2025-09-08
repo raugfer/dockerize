@@ -1,9 +1,9 @@
 #!/bin/sh
-docker image inspect $USER/opera-developer:118.0.5439.0 > /dev/null \
+docker image inspect $USER/opera-developer:123.0.5644.0 > /dev/null \
 || \
 docker build \
 	-q \
-	-t $USER/opera-developer:118.0.5439.0 \
+	-t $USER/opera-developer:123.0.5644.0 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/opera-developer-docker/ \
 && \
@@ -29,4 +29,4 @@ docker run \
 	--device /dev/snd \
 	--device /dev/video0 \
 	--memory=4g \
-	$USER/opera-developer:118.0.5439.0
+	$USER/opera-developer:123.0.5644.0
