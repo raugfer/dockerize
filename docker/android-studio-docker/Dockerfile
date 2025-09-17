@@ -13,7 +13,7 @@ MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
 LABEL Description "Android Studio"
 
-ARG URL=https://dl.google.com/dl/android/studio/ide-zips/2024.1.2.13/android-studio-2024.1.2.13-linux.tar.gz
+ARG URL=https://dl.google.com/dl/android/studio/ide-zips/2025.1.3.7/android-studio-2025.1.3.7-linux.tar.gz
 ARG USER=ubuntu
 
 RUN \
@@ -22,10 +22,10 @@ RUN \
 	apt-get clean
 
 RUN \
-	wget -q -O /tmp/android-studio-2024.1.2.13-linux.tar.gz ${URL} && \
+	wget -q -O /tmp/android-studio-2025.1.3.7-linux.tar.gz ${URL} && \
 	cd /opt/ && \
-	tar xzf /tmp/android-studio-2024.1.2.13-linux.tar.gz && \
-	rm -f /tmp/android-studio-2024.1.2.13-linux.tar.gz
+	tar xzf /tmp/android-studio-2025.1.3.7-linux.tar.gz && \
+	rm -f /tmp/android-studio-2025.1.3.7-linux.tar.gz
 
 RUN \
 	apt-get update && \
@@ -47,4 +47,4 @@ RUN usermod -l ${USER} -a -G audio -G plugdev -G kvm -d /home/${USER} -m ubuntu
 USER ${USER}
 ENV USER=${USER}
 WORKDIR /home/${USER}/
-CMD /opt/android-studio/bin/studio.sh
+CMD /opt/android-studio/bin/studio
