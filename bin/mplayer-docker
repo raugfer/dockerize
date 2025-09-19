@@ -7,6 +7,7 @@ docker build \
 && \
 mkdir -p \
 	$HOME/Downloads/ \
+	$HOME/Movies/ \
 	/media/ \
 && \
 docker run \
@@ -21,6 +22,7 @@ docker run \
 	-e PULSE_SERVER=unix:/run/user/1000/pulse/native \
 	-w $PWD \
 	-v $HOME/Downloads/:$HOME/Downloads/ \
+	-v $HOME/Movies/:$HOME/Movies/ \
 	-v /media/:/media/ \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/:ro \
 	-v /run/user/1000/pulse/native:/run/user/1000/pulse/native \
