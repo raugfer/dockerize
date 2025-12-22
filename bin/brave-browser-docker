@@ -1,9 +1,9 @@
 #!/bin/sh
-docker image inspect $USER/brave-browser:1.84.141 > /dev/null \
+docker image inspect $USER/brave-browser:1.85.118 > /dev/null \
 || \
 docker build \
 	-q \
-	-t $USER/brave-browser:1.84.141 \
+	-t $USER/brave-browser:1.85.118 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/brave-browser-docker/ \
 && \
@@ -28,4 +28,4 @@ docker run \
 	--device /dev/snd \
 	--device /dev/video0 \
 	--memory=8g \
-	$USER/brave-browser:1.84.141
+	$USER/brave-browser:1.85.118

@@ -16,6 +16,7 @@ docker run \
 	--rm \
 	--name rust \
 	-v $HOME/Projects/:$HOME/Projects/ \
+	-v $HOME/Public/:$HOME/Public/ \
 	-w $PWD \
 	-e TERM=$TERM \
 	$USER/rust:1.88 \
