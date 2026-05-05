@@ -13,7 +13,7 @@ MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
 LABEL Description "Android Studio"
 
-ARG URL=https://dl.google.com/dl/android/studio/ide-zips/2025.1.3.7/android-studio-2025.1.3.7-linux.tar.gz
+ARG URL=https://dl.google.com/dl/android/studio/ide-zips/2025.3.4.6/android-studio-panda4-linux.tar.gz
 ARG USER=ubuntu
 
 RUN \
@@ -22,10 +22,10 @@ RUN \
 	apt-get clean
 
 RUN \
-	wget -q -O /tmp/android-studio-2025.1.3.7-linux.tar.gz ${URL} && \
+	wget -q -O /tmp/android-studio-panda4-linux.tar.gz ${URL} && \
 	cd /opt/ && \
-	tar xzf /tmp/android-studio-2025.1.3.7-linux.tar.gz && \
-	rm -f /tmp/android-studio-2025.1.3.7-linux.tar.gz
+	tar xzf /tmp/android-studio-panda4-linux.tar.gz && \
+	rm -f /tmp/android-studio-panda4-linux.tar.gz
 
 RUN \
 	apt-get update && \
