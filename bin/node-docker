@@ -1,9 +1,9 @@
 #!/bin/sh
-docker image inspect $USER/node:18.20.1 > /dev/null \
+#	-q \
+docker image inspect $USER/node:24.15.0 > /dev/null \
 || \
 docker build \
-	-q \
-	-t $USER/node:18.20.1 \
+	-t $USER/node:24.15.0 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/node-docker/ \
 && \
@@ -19,5 +19,5 @@ docker run \
 	-v $HOME/Projects/:$HOME/Projects/ \
 	-w $PWD \
 	-e TERM=$TERM \
-	$USER/node:18.20.1 \
+	$USER/node:24.15.0 \
 	bash
