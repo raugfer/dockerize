@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y antigravity && apt-get clean
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN apt-get update && apt-get install -y ./google-chrome-stable_current_amd64.deb && apt-get clean
 RUN rm ./google-chrome-stable_current_amd64.deb
+RUN sed -i 's|"\$HERE/chrome"|"\$HERE/chrome" --no-sandbox|g' /opt/google/chrome/google-chrome
 COPY start.sh /start.sh
 
 ENV DISPLAY=:0
