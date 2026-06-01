@@ -1,9 +1,9 @@
 #!/bin/sh
-docker image inspect $USER/brave-browser:1.90.124 > /dev/null \
+docker image inspect $USER/brave-browser:1.90.128 > /dev/null \
 || \
 docker build \
 	-q \
-	-t $USER/brave-browser:1.90.124 \
+	-t $USER/brave-browser:1.90.128 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/brave-browser-docker/ \
 && \
@@ -15,7 +15,6 @@ docker run \
 	-d \
 	--rm \
 	--name brave-browser \
-	--cap-add SYS_ADMIN \
 	-e DISPLAY \
 	-e TZ \
 	-v $HOME/.config/dockerize/brave-browser/:$HOME/.config/BraveSoftware/Brave-Browser/ \
@@ -27,4 +26,4 @@ docker run \
 	--device /dev/dri \
 	--device /dev/snd \
 	--memory=8g \
-	$USER/brave-browser:1.90.124
+	$USER/brave-browser:1.90.128

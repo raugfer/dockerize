@@ -23,7 +23,7 @@ RUN curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://br
 RUN echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
 RUN \
 	apt-get update && \
-	apt-get install -y brave-browser=1.90.124 && \
+	apt-get install -y brave-browser=1.90.128 && \
 	apt-get clean
 
 ENV DISPLAY=:0
@@ -34,4 +34,4 @@ RUN usermod -l ${USER} -a -G audio -d /home/${USER} -m ubuntu
 USER ${USER}
 ENV USER=${USER}
 WORKDIR /home/${USER}/
-CMD brave-browser
+CMD brave-browser --no-sandbox
