@@ -1,0 +1,27 @@
+#!/bin/sh
+docker image inspect $USER/antigravity:1.23.2 > /dev/null \
+|| \
+docker build \
+	-q \
+	-t $USER/antigravity:1.23.2 \
+	--build-arg USER=$USER \
+	`dirname $0`/../docker/antigravity-docker/ \
+&& \
+mkdir -p \
+	$HOME/.config/dockerize/antigravity/.antigravity/ \
+	$HOME/.config/dockerize/antigravity/.config/Antigravity/ \
+	$HOME/.config/dockerize/antigravity/.gemini/antigravity/ \
+	$HOME/Projects/ \
+&& \
+docker run \
+	-d \
+	--rm \
+	--name antigravity \
+	-e DISPLAY \
+	-v $HOME/.config/dockerize/antigravity/.antigravity/:$HOME/.antigravity/ \
+	-v $HOME/.config/dockerize/antigravity/.config/Antigravity/:$HOME/.config/Antigravity/ \
+	-v $HOME/.config/dockerize/antigravity/.gemini/antigravity/:$HOME/.gemini/antigravity/ \
+	-v $HOME/Projects/:$HOME/Projects/ \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix/:ro \
+	--device /dev/dri \
+	$USER/antigravity:1.23.2
