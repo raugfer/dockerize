@@ -18,11 +18,10 @@ Start the container
         -d \
         --rm \
         --name brave-browser \
-        --cap-add SYS_ADMIN \
         -e DISPLAY \
         -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
         -v $HOME/.config/dockerize/brave-browser/:/home/ubuntu/.config/BraveSoftware/Brave-Browser/ \
         -v $HOME/Downloads/:/home/ubuntu/Downloads/ \
         --device /dev/snd \
-        --device /dev/video0 \
+        --device /dev/dri \
         brave-browser
