@@ -13,7 +13,7 @@ MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
 LABEL Description "Opera Developer"
 
-ARG URL=https://download5.operacdn.com/pub/opera-developer/133.0.5917.0/linux/opera-developer_133.0.5917.0_amd64.deb
+ARG URL=https://download5.operacdn.com/pub/opera-developer/136.0.5981.0/linux/opera-developer_136.0.5981.0_amd64.deb
 ARG USER=ubuntu
 
 RUN \
