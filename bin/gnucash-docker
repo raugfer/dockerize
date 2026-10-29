@@ -1,9 +1,9 @@
 #!/bin/sh
-docker image inspect $USER/gnucash:5.5 > /dev/null \
+docker image inspect $USER/gnucash:5.14 > /dev/null \
 || \
 docker build \
 	-q \
-	-t $USER/gnucash:5.5 \
+	-t $USER/gnucash:5.14 \
 	--build-arg USER=$USER \
 	`dirname $0`/../docker/gnucash-docker/ \
 && \
@@ -27,4 +27,4 @@ docker run \
 	-v /etc/localtime:/etc/localtime:ro \
 	-v /run/dbus/:/run/dbus/ \
 	--device /dev/snd \
-	$USER/gnucash:5.5
+	$USER/gnucash:5.14

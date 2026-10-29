@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 RUN \
 	apt-get update && \
 	apt-get upgrade -y && \
@@ -17,7 +17,7 @@ ARG USER=ubuntu
 
 RUN \
 	apt-get update && \
-	apt-get install -y gnucash=1:5.5-1.2build1 && \
+	apt-get install -y gnucash=1:5.14-1build1 && \
 	apt-get clean
 
 ENV DISPLAY=:0

@@ -1,12 +1,16 @@
 #!/bin/sh
+docker image inspect $USER/inkscape:1.4.3 > /dev/null \
+|| \
 docker build \
 	-q \
-	-t $USER/inkscape:1.2.2 \
+	-t $USER/inkscape:1.4.3 \
 	--build-arg USER=$USER \
-	`dirname $0`/../docker/inkscape-docker/
+	`dirname $0`/../docker/inkscape-docker/ \
+&& \
 mkdir -p \
 	$HOME/.config/dockerize/inkscape/ \
-	$HOME/Downloads/
+	$HOME/Downloads/ \
+&& \
 docker run \
 	-d \
 	--rm \
@@ -19,4 +23,4 @@ docker run \
 	-v /run/dbus/:/run/dbus/:rw \
 	-v /etc/localtime:/etc/localtime:ro \
 	--device /dev/snd \
-	$USER/inkscape:1.2.2
+	$USER/inkscape:1.4.3

@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 RUN \
 	apt-get update && \
 	apt-get upgrade -y && \
@@ -13,7 +13,7 @@ MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
 LABEL Description "Opera Developer"
 
-ARG URL=https://download5.operacdn.com/pub/opera-developer/136.0.5981.0/linux/opera-developer_136.0.5981.0_amd64.deb
+ARG URL=https://download5.operacdn.com/pub/opera-developer/140.0.6066.0/linux/opera-developer_140.0.6066.0_amd64.deb
 ARG USER=ubuntu
 
 RUN \

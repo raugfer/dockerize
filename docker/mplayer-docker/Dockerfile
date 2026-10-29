@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 
 MAINTAINER "Rodrigo Ferreira https://hub.docker.com/u/raugfer/"
 
@@ -8,7 +8,7 @@ ARG USER=ubuntu
 
 RUN \
 	apt-get update && \
-	apt-get install -y mplayer=2:1.5+svn38446-1build5 ffmpeg=7:6.1.1-3ubuntu5 sudo && \
+	apt-get install -y mplayer=2:1.5+svn38681-1 ffmpeg=7:8.0.1-3ubuntu2 sudo && \
 	apt-get clean
 
 ENV DISPLAY=:0

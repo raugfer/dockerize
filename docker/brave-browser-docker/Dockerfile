@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 RUN \
 	apt-get update && \
 	apt-get upgrade -y && \
@@ -23,7 +23,7 @@ RUN curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://br
 RUN echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
 RUN \
 	apt-get update && \
-	apt-get install -y brave-browser=1.97.57 && \
+	apt-get install -y brave-browser=1.98.62 && \
 	apt-get clean
 
 ENV DISPLAY=:0

@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 RUN \
 	apt-get update && \
 	apt-get upgrade -y && \
@@ -17,7 +17,7 @@ ARG USER=ubuntu
 
 RUN \
 	apt-get update && \
-	apt-get install -y inkscape=1.2.2-2ubuntu12 && \
+	apt-get install -y inkscape=1.4.3-0ubuntu2 && \
 	apt-get clean
 
 ENV DISPLAY=:0

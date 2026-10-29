@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 RUN \
 	apt-get update && \
 	apt-get upgrade -y && \
@@ -17,7 +17,7 @@ ARG USER=ubuntu
 
 RUN \
 	apt-get update && \
-	apt-get install -y gimp=2.10.36-3ubuntu0.24.04.1 iso-codes && \
+	apt-get install -y gimp=3.2.2-1ubuntu0.26.04.1 iso-codes && \
 	apt-get clean
 
 ENV DISPLAY=:0
