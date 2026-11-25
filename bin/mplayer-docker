@@ -25,7 +25,7 @@ docker run \
 	-w $PWD \
 	-v $HOME/Downloads/:$HOME/Downloads/ \
 	-v $HOME/Videos/:$HOME/Videos/ \
-	-v /media/:/media/ \
+	-v /run/media/:/run/media/ \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix/:ro \
 	-v /run/user/1000/pulse/native:/run/user/1000/pulse/native \
 	$USER/mplayer:1.5
